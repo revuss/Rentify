@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiBaseUrl: 'http://localhost:8180',
+  production: true,
+  apiBaseUrl: 'https://rentifybackend-production.up.railway.app',
 };
