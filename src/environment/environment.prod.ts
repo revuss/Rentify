@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://your-production-url.com',
+  apiBaseUrl: 'https://rentifybackend-production.up.railway.app',
   // Add other environment-specific variables here
 };
