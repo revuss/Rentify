@@ -1,0 +1,94 @@
+<ng-toast></ng-toast>
+<div class="select-non text-[#333]">
+  <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
+    <div class="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
+      <div class="max-md:text-center">
+        <h2 class="lg:text-4xl text-3xl font-extrabold lg:leading-[55px]">
+          Manage Your Listings, Find Your Home
+        </h2>
+        <p class="text-sm mt-6">
+          Sign in to explore, post, and rent properties effortlessly. Your
+          one-stop destination for all your rental needs.
+        </p>
+        <p class="text-sm mt-10">
+          New to Our Platform
+          <a
+            routerLink="/register"
+            class="text-amber-600 font-semibold hover:underline ml-1"
+            >Register here</a
+          >
+        </p>
+      </div>
+      <form
+        class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full"
+        [formGroup]="LoginForm"
+        (submit)="onLogin()"
+      >
+        <h3 class="text-3xl font-extrabold mb-8 max-md:text-center">Sign In</h3>
+        <div>
+          <input
+            formControlName="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Email address"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              LoginForm.controls['email'].invalid &&
+              (isFormSubmitted ||
+                LoginForm.controls['email'].touched ||
+                LoginForm.controls['email'].dirty)
+            "
+          >
+            <span *ngIf="LoginForm.controls['email'].errors?.['required']"
+              >Email required.</span
+            >
+            <span *ngIf="LoginForm.controls['email'].errors?.['email']"
+              >Enter Valid Email.</span
+            >
+          </div>
+        </div>
+        <div>
+          <input
+            formControlName="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Password"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              LoginForm.controls['password'].invalid &&
+              (isFormSubmitted ||
+                LoginForm.controls['password'].touched ||
+                LoginForm.controls['password'].dirty)
+            "
+          >
+            <span *ngIf="LoginForm.controls['password'].errors?.['required']"
+              >Password Required.</span
+            >
+            <span *ngIf="LoginForm.controls['password'].errors?.['minlength']"
+              >Password must me more than 8 letters.</span
+            >
+          </div>
+        </div>
+
+        <div class="!mt-10">
+          <button
+            type="submit"
+            class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-amber-600 hover:bg-amber-700 focus:outline-none"
+          >
+            Log in
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

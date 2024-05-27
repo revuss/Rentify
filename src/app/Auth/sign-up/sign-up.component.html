@@ -1,0 +1,232 @@
+<ng-toast></ng-toast>
+<div class="select-none text-[#333]">
+  <div class="min-h-[90vh] flex fle-col items-center justify-center py-6 px-4">
+    <div class="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
+      <div class="max-md:text-center">
+        <h2 class="lg:text-4xl text-3xl font-extrabold lg:leading-[55px]">
+          Discover Your Perfect Rental
+        </h2>
+        <p class="text-sm mt-6">
+          World of rental properties tailored to your preferences and exclusive
+          features for a personalized housing experience.
+        </p>
+        <p class="text-sm mt-10">
+          Already Registered ?
+          <a
+            routerLink="/login"
+            class="text-amber-600 font-semibold hover:underline ml-1"
+            >Login here</a
+          >
+        </p>
+      </div>
+      <form
+        class="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full"
+        [formGroup]="userForm"
+        (submit)="onSubmit()"
+      >
+        <h3 class="text-3xl font-extrabold mb-8 max-md:text-center">
+          Register
+        </h3>
+
+        <!-- First name -->
+        <div>
+          <input
+            name="firstname"
+            type="text"
+            formControlName="firstname"
+            autocomplete="firstname"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="First Name"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.controls['firstname'].invalid &&
+              (isFormSubmitted ||
+                userForm.controls['firstname'].touched ||
+                userForm.controls['firstname'].dirty)
+            "
+          >
+            <span *ngIf="userForm.controls['firstname'].errors?.['required']"
+              >Name required.</span
+            >
+          </div>
+        </div>
+        <!-- First name End -->
+
+        <!-- Last name -->
+        <div>
+          <input
+            name="lastname"
+            type="text"
+            formControlName="lastname"
+            autocomplete="lastname"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Last Name"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.controls['lastname'].invalid &&
+              (isFormSubmitted ||
+                userForm.controls['lastname'].touched ||
+                userForm.controls['lastname'].dirty)
+            "
+          >
+            <span *ngIf="userForm.controls['lastname'].errors?.['required']"
+              >Name required.</span
+            >
+          </div>
+        </div>
+        <!-- Last name End -->
+
+        <!-- Email -->
+
+        <div>
+          <input
+            formControlName="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Email address"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.controls['email'].invalid &&
+              (isFormSubmitted ||
+                userForm.controls['email'].touched ||
+                userForm.controls['email'].dirty)
+            "
+          >
+            <span *ngIf="userForm.controls['email'].errors?.['required']"
+              >Email required.</span
+            >
+            <span *ngIf="userForm.controls['email'].errors?.['email']"
+              >Required Valid Email.</span
+            >
+          </div>
+        </div>
+
+        <!-- Email End -->
+
+        <!-- Phone Number -->
+
+        <div>
+          <input
+            formControlName="phonenumber"
+            name="phonenumber"
+            type="number"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Phone Number"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.controls['phonenumber'].invalid &&
+              (isFormSubmitted ||
+                userForm.controls['phonenumber'].touched ||
+                userForm.controls['phonenumber'].dirty)
+            "
+          >
+            <span *ngIf="userForm.controls['phonenumber'].errors?.['required']"
+              >Phone number required.</span
+            >
+            <span *ngIf="userForm.controls['phonenumber'].errors?.['pattern']"
+              >Must be 10 digits.</span
+            >
+          </div>
+        </div>
+
+        <!-- Phone Number End -->
+
+        <!-- Password -->
+
+        <div>
+          <input
+            formControlName="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Password"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.controls['password'].invalid &&
+              (isFormSubmitted ||
+                userForm.controls['password'].touched ||
+                userForm.controls['password'].dirty)
+            "
+          >
+            <span *ngIf="userForm.controls['password'].errors?.['required']">
+              Password required.
+            </span>
+            <span *ngIf="userForm.controls['password'].errors?.['minlength']">
+              Password must be 8 characters or more.
+            </span>
+          </div>
+        </div>
+
+        <!-- Password End -->
+
+        <!-- confrim Password -->
+
+        <div>
+          <input
+            formControlName="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            autocomplete="current-password"
+            required
+            class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            placeholder="Confrim Password"
+          />
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.controls['confirmPassword'].invalid &&
+              (isFormSubmitted ||
+                userForm.controls['confirmPassword'].touched ||
+                userForm.controls['confirmPassword'].dirty)
+            "
+          >
+            <span
+              *ngIf="userForm.controls['confirmPassword'].errors?.['required']"
+              >Password required.</span
+            >
+          </div>
+          <div
+            class="text-xs text-red-600 mx-2"
+            *ngIf="
+              userForm.invalid &&
+              (isFormSubmitted || userForm.touched || userForm.dirty)
+            "
+          >
+            <span *ngIf="userForm.errors?.['PasswordNoMatch']"
+              >Password doesn't match</span
+            >
+          </div>
+        </div>
+
+        <!-- confrim Password End -->
+
+        <div class="!mt-10">
+          <button
+            type="submit"
+            class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-amber-600 hover:bg-amber-700 focus:outline-none"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

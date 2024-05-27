@@ -1,0 +1,98 @@
+<!-- component -->
+<section class="max-w-4xl p-6 mx-auto bg-amber-600 rounded-md shadow-md mt-20">
+  <h1 class="text-xl font-bold text-white capitalize dark:text-white">
+    Account settings
+  </h1>
+  <form>
+    <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+      <div>
+        <label class="text-white dark:text-gray-200 uppercase" for="propertyId"
+          >Id</label
+        >
+        <input
+          id="propertyId"
+          type="text"
+          name="propertyId"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="propertyArea"
+          >City</label
+        >
+        <input
+          id="propertyArea"
+          type="text"
+          name="propertyArea"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        />
+      </div>
+      <div>
+        <label class="text-white dark:text-gray-200" for="propertyBedrooms"
+          >Total Bedrooms</label
+        >
+        <input
+          id="propertyBedrooms"
+          type="number"
+          name="propertyBedrooms"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        />
+      </div>
+      <div>
+        <label class="text-white dark:text-gray-200" for="propertyBathrooms"
+          >Total Bathrooms</label
+        >
+        <input
+          id="propertyBathrooms"
+          type="number"
+          name="propertyBathrooms"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        />
+      </div>
+      <div>
+        <label class="text-white dark:text-gray-200" for="hospitalsNearby"
+          >NearBy Hospitals🏥
+        </label>
+        <input
+          id="hospitalsNearby"
+          type="number"
+          name="hospitalsNearby"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="collegesNearby"
+          >NearBy Colleges 🏫
+        </label>
+        <input
+          id="collegesNearby"
+          type="number"
+          name="collegesNearby"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="propertyDescription"
+          >Address and Description</label
+        >
+        <textarea
+          id="textarea"
+          name="propertyDescription"
+          type="textarea"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="flex justify-end mt-6">
+      <button
+        class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-600"
+      >
+        Add Property
+      </button>
+    </div>
+  </form>
+</section>
