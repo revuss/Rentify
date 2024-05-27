@@ -1,9 +1,10 @@
+<ng-toast></ng-toast>
 <!-- component -->
 <section class="max-w-4xl p-6 mx-auto bg-amber-600 rounded-md shadow-md mt-20">
   <h1 class="text-xl font-bold text-white capitalize dark:text-white">
     Account settings
   </h1>
-  <form>
+  <form [formGroup]="PropertyForm" (submit)="onSubmit()">
     <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
       <div>
         <label class="text-white dark:text-gray-200 uppercase" for="propertyId"
@@ -11,10 +12,28 @@
         >
         <input
           id="propertyId"
+          formControlName="propertyId"
           type="text"
           name="propertyId"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         />
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['propertyId'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['propertyId'].touched ||
+              PropertyForm.controls['propertyId'].dirty)
+          "
+        >
+          <span *ngIf="PropertyForm.controls['propertyId'].errors?.['required']"
+            >Required.</span
+          >
+          <span
+            *ngIf="PropertyForm.controls['propertyId'].errors?.['minlength']"
+            >more characters needs.</span
+          >
+        </div>
       </div>
 
       <div>
@@ -23,10 +42,26 @@
         >
         <input
           id="propertyArea"
+          formControlName="propertyArea"
+          formControlName="propertyArea"
           type="text"
           name="propertyArea"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         />
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['propertyArea'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['propertyArea'].touched ||
+              PropertyForm.controls['propertyArea'].dirty)
+          "
+        >
+          <span
+            *ngIf="PropertyForm.controls['propertyArea'].errors?.['required']"
+            >Required.</span
+          >
+        </div>
       </div>
       <div>
         <label class="text-white dark:text-gray-200" for="propertyBedrooms"
@@ -34,10 +69,25 @@
         >
         <input
           id="propertyBedrooms"
+          formControlName="propertyBedrooms"
           type="number"
           name="propertyBedrooms"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         />
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['propertyBedrooms'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['propertyBedrooms'].touched ||
+              PropertyForm.controls['propertyBedrooms'].dirty)
+          "
+        >
+          <span
+            *ngIf="PropertyForm.controls['propertyBedrooms'].errors?.['required']"
+            >Required.</span
+          >
+        </div>
       </div>
       <div>
         <label class="text-white dark:text-gray-200" for="propertyBathrooms"
@@ -46,9 +96,24 @@
         <input
           id="propertyBathrooms"
           type="number"
+          formControlName="propertyBathrooms"
           name="propertyBathrooms"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         />
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['propertyBathrooms'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['propertyBathrooms'].touched ||
+              PropertyForm.controls['propertyBathrooms'].dirty)
+          "
+        >
+          <span
+            *ngIf="PropertyForm.controls['propertyBathrooms'].errors?.['required']"
+            >Required.</span
+          >
+        </div>
       </div>
       <div>
         <label class="text-white dark:text-gray-200" for="hospitalsNearby"
@@ -56,10 +121,25 @@
         </label>
         <input
           id="hospitalsNearby"
-          type="number"
+          formControlName="hospitalsNearby"
+          type="text"
           name="hospitalsNearby"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         />
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['hospitalsNearby'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['hospitalsNearby'].touched ||
+              PropertyForm.controls['hospitalsNearby'].dirty)
+          "
+        >
+          <span
+            *ngIf="PropertyForm.controls['hospitalsNearby'].errors?.['required']"
+            >Required.</span
+          >
+        </div>
       </div>
 
       <div>
@@ -68,10 +148,26 @@
         </label>
         <input
           id="collegesNearby"
-          type="number"
+          type="text"
+          formControlName="collegesNearby"
           name="collegesNearby"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         />
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['collegesNearby'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['collegesNearby'].touched ||
+              PropertyForm.controls['collegesNearby'].dirty)
+          "
+        >
+          <span
+            *ngIf="PropertyForm.controls['collegesNearby'].errors?.['required']"
+          >
+            Required.</span
+          >
+        </div>
       </div>
 
       <div>
@@ -81,9 +177,24 @@
         <textarea
           id="textarea"
           name="propertyDescription"
+          formControlName="propertyDescription"
           type="textarea"
           class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md rounded-md focus:outline-none focus:ring-4 focus:ring-amber-900 focus:border-transparent"
         ></textarea>
+        <div
+          class="text-xs text-red-900 mx-2 mt-1"
+          *ngIf="
+            PropertyForm.controls['propertyDescription'].invalid &&
+            (isFormSubmitted ||
+              PropertyForm.controls['propertyDescription'].touched ||
+              PropertyForm.controls['propertyDescription'].dirty)
+          "
+        >
+          <span
+            *ngIf="PropertyForm.controls['propertyDescription'].errors?.['required']"
+            >Name required.</span
+          >
+        </div>
       </div>
     </div>
 

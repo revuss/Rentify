@@ -70,6 +70,15 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: 'liked-properties',
+    title: 'Rentify - Liked Property',
+    loadComponent: () =>
+      import('./Auth/liked-properties/liked-properties.component').then(
+        (c) => c.LikedPropertiesComponent
+      ),
+    canActivate: [authGuard],
+  },
+  {
     path: '**',
     title: 'Rentify - Not Found',
     loadComponent: () =>

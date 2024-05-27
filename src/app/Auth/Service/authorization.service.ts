@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthorizationService {
-  private apiUrlCheckAuth = 'http://localhost:8180/check/author';
+  private apiUrlCheckAuth = `${environment.apiBaseUrl}/check/author`;
 
   constructor(private http: HttpClient, private router: Router) {}
 

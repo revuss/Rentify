@@ -1,8 +1,6 @@
 <ng-toast></ng-toast>
-<section
-  class="select-none bg-blue-500ray-50"
-  *ngIf="MyPropertiesData.length > 0; else null"
->
+<section class="select-none bg-blue-500ray-50">
+  >
   <div class="py-10 sm:py-16 block lg:py-24 relative bg-opacity-50 z-40">
     <div
       class="relative mx-auto h-full px-4 pb-20 md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8"
@@ -13,14 +11,14 @@
             <p
               class="text-4xl font-semibold text-amber-600 tracking-widest text-g uppercase"
             >
-              Your Properties
+              Liked Properties
             </p>
           </div>
         </div>
         <div
           class="grid grid-cols-1 gap-5 mt-12 md:grid-cols-2 lg:grid-cols-3 lg:mt-20"
         >
-          @for (item of MyPropertiesData; track $index) {
+          @for (item of LikedPropertiesData; track $index) {
 
           <div
             class="transition-all duration-1000 bg-white hover:bg-amber-500 hover:shadow-xl m-2 p-4 relative z-40 group"

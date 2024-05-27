@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environment/environment';
 
-const AllPropertiesApiURL = 'http://localhost:8180/allproperties';
+const AllPropertiesApiURL = `${environment.apiBaseUrl}/allproperties`;
 
 @Injectable({
   providedIn: 'root',
